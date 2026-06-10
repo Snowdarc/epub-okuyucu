@@ -90,27 +90,27 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
 
     // ---- Ayarlar ----
 
-    fun setFontSize(size: Float) {
+    fun updateFontSize(size: Float) {
         fontSize = size
         prefs.edit().putFloat("fontSize", size).apply()
     }
 
-    fun setThemeMode(mode: Int) {
+    fun updateThemeMode(mode: Int) {
         themeMode = mode
         prefs.edit().putInt("themeMode", mode).apply()
     }
 
-    fun setFontFamilyIndex(i: Int) {
+    fun updateFontFamilyIndex(i: Int) {
         fontFamilyIndex = i
         prefs.edit().putInt("fontFamily", i).apply()
     }
 
-    fun setLineSpacing(v: Float) {
+    fun updateLineSpacing(v: Float) {
         lineSpacing = v
         prefs.edit().putFloat("lineSpacing", v).apply()
     }
 
-    fun setJustify(v: Boolean) {
+    fun updateJustify(v: Boolean) {
         justify = v
         prefs.edit().putBoolean("justify", v).apply()
     }
@@ -147,3 +147,4 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
             .apply()
     }
 }
+
