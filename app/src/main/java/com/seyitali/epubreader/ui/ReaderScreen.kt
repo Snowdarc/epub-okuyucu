@@ -298,7 +298,7 @@ fun ReaderScreen(vm: ReaderViewModel) {
                 )
                 Slider(
                     value = vm.fontSize,
-                    onValueChange = { vm.setFontSize(it) },
+                    onValueChange = { vm.updateFontSize(it) },
                     valueRange = 12f..28f,
                     steps = 15
                 )
@@ -309,7 +309,7 @@ fun ReaderScreen(vm: ReaderViewModel) {
                 )
                 Slider(
                     value = vm.lineSpacing,
-                    onValueChange = { vm.setLineSpacing(it) },
+                    onValueChange = { vm.updateLineSpacing(it) },
                     valueRange = 1.2f..2.2f,
                     steps = 9
                 )
@@ -320,7 +320,7 @@ fun ReaderScreen(vm: ReaderViewModel) {
                     listOf("Sans", "Serif").forEachIndexed { i, label ->
                         SegmentedButton(
                             selected = vm.fontFamilyIndex == i,
-                            onClick = { vm.setFontFamilyIndex(i) },
+                            onClick = { vm.updateFontFamilyIndex(i) },
                             shape = SegmentedButtonDefaults.itemShape(index = i, count = 2)
                         ) { Text(label) }
                     }
@@ -333,7 +333,7 @@ fun ReaderScreen(vm: ReaderViewModel) {
                     listOf("Sistem", "Açık", "Koyu").forEachIndexed { i, label ->
                         SegmentedButton(
                             selected = vm.themeMode == i,
-                            onClick = { vm.setThemeMode(i) },
+                            onClick = { vm.updateThemeMode(i) },
                             shape = SegmentedButtonDefaults.itemShape(index = i, count = 3)
                         ) { Text(label) }
                     }
@@ -346,7 +346,7 @@ fun ReaderScreen(vm: ReaderViewModel) {
                         style = MaterialTheme.typography.bodyLarge,
                         modifier = Modifier.weight(1f)
                     )
-                    Switch(checked = vm.justify, onCheckedChange = { vm.setJustify(it) })
+                    Switch(checked = vm.justify, onCheckedChange = { vm.updateJustify(it) })
                 }
             }
         }
